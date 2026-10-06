@@ -1,0 +1,154 @@
+{
+  "run_id": "cleaning_413e",
+  "run_name": "cleaning_413e",
+  "start_time": "2026-09-08T05:05:04.513316+00:00",
+  "end_time": "2026-09-08T05:07:02.381672+00:00",
+  "status": "stopped",
+  "auth_mode": "api_key",
+  "targets_info": [
+    {
+      "type": "local_code",
+      "details": {
+        "target_path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning",
+        "workspace_subdir": "Cleaning"
+      },
+      "original": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning"
+    }
+  ],
+  "llm_usage": {
+    "requests": 3,
+    "input_tokens": 6150,
+    "input_tokens_details": [
+      {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      }
+    ],
+    "output_tokens": 70,
+    "output_tokens_details": [
+      {
+        "reasoning_tokens": 0
+      }
+    ],
+    "total_tokens": 6220,
+    "request_usage_entries": [
+      {
+        "input_tokens": 2050,
+        "output_tokens": 39,
+        "total_tokens": 2089,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      {
+        "input_tokens": 2050,
+        "output_tokens": 14,
+        "total_tokens": 2064,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      {
+        "input_tokens": 2050,
+        "output_tokens": 17,
+        "total_tokens": 2067,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    ],
+    "cost": 0.0,
+    "agents": [
+      {
+        "requests": 3,
+        "input_tokens": 6150,
+        "input_tokens_details": [
+          {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          }
+        ],
+        "output_tokens": 70,
+        "output_tokens_details": [
+          {
+            "reasoning_tokens": 0
+          }
+        ],
+        "total_tokens": 6220,
+        "request_usage_entries": [
+          {
+            "input_tokens": 2050,
+            "output_tokens": 39,
+            "total_tokens": 2089,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          {
+            "input_tokens": 2050,
+            "output_tokens": 14,
+            "total_tokens": 2064,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          {
+            "input_tokens": 2050,
+            "output_tokens": 17,
+            "total_tokens": 2067,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          }
+        ],
+        "agent_id": "2c2b43dc",
+        "agent_name": "Root Agent",
+        "model": "ollama/qwen2.5-coder:7b",
+        "cost": 0.0
+      }
+    ]
+  },
+  "scan_mode": "quick",
+  "instruction": "",
+  "user_instruction": null,
+  "non_interactive": false,
+  "local_sources": [
+    {
+      "source_path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning",
+      "workspace_subdir": "Cleaning",
+      "protect_metadata": true
+    }
+  ],
+  "workspace_files": [],
+  "workspace_mount": null,
+  "diff_scope": {
+    "active": false,
+    "mode": "auto"
+  },
+  "scope_mode": "auto",
+  "diff_base": null
+}

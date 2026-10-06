@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./mvnw -q -o compile -DskipTests)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(cd \"/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend\" && find ~/.m2 -iname \"spring-web-6*.jar\" 2>/dev/null | head -3)",
+      "Read(//c/Users/roles/.m2/**)",
+      "Bash(docker --version)",
+      "Bash(echo \"BUILD_EXIT:$?\")",
+      "Bash(node -e \"const fi=require\\('react-icons/fi'\\); console.log\\('FiBriefcase' in fi, 'FiUser' in fi, 'FiSettings' in fi\\);\")",
+      "Read(//c/Users/roles/AppData/Local/Temp/claude/c--Users-roles-OneDrive-Desktop-Cord-Cleaning/11c433cd-dcf6-4d10-b59c-96250cc72c9e/scratchpad/fonts/**)",
+      "Bash(curl -sSL -o \"plexsans-variable.ttf\" \"https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsans/IBMPlexSans%5Bwdth,wght%5D.ttf\" -w \"HTTP:%{http_code} size:%{size_download}\\\\n\")",
+      "Bash(rm -f plexsans-regular.ttf plexsans-medium.ttf)",
+      "Bash(cd \"c:\\\\Users\\\\roles\\\\OneDrive\\\\Desktop\\\\Cord\\\\Cleaning\\\\primos_enterprise_cleaning\" && rm -rf lib/pages/private/payroll lib/pages/private/finance && ls lib/pages/private/ | grep -iE \"payroll|finance\"; echo done)",
+      "Bash(dir /b src\\\\main\\\\resources\\\\db\\\\migration\\\\tenant)",
+      "Bash(pkill -f \"flutter attach\" 2>/dev/null *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\primos_enterprise_cleaning\\lib\\pages\\private\\payroll",
+      "C:\\Users\\roles\\AppData\\Local\\Temp\\claude\\c--Users-roles-OneDrive-Desktop-Cord-Cleaning\\11c433cd-dcf6-4d10-b59c-96250cc72c9e\\scratchpad"
+    ]
+  }
+}

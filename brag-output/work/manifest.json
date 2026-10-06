@@ -1,0 +1,38 @@
+[
+  {
+    "name": "hook",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\hook\\page@48c87e9a6c35cd4175cc856f58166412.webm",
+    "offsetSec": 1.091,
+    "durationSec": 2.5
+  },
+  {
+    "name": "login",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\login\\page@3867386ee503976149f11a3fd4290458.webm",
+    "offsetSec": 1.141,
+    "durationSec": 3.5
+  },
+  {
+    "name": "dashboard",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\dashboard\\page@1c1a84f0398390e699242801de91cb14.webm",
+    "offsetSec": 0.992,
+    "durationSec": 4
+  },
+  {
+    "name": "alerts",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\alerts\\page@506396b43a7268c6c466cb21b7e4e0d1.webm",
+    "offsetSec": 0.897,
+    "durationSec": 3.5
+  },
+  {
+    "name": "portal",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\portal\\page@bf0fe1c2c44cf30ba0ae0eea648206ae.webm",
+    "offsetSec": 0.751,
+    "durationSec": 4
+  },
+  {
+    "name": "outro",
+    "file": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\brag-output\\work\\captured\\outro\\page@7cb0d7828ef3a34d82261d08bbbe1073.webm",
+    "offsetSec": 0.834,
+    "durationSec": 3
+  }
+]

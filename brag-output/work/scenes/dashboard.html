@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600;700&family=Karla:wght@400;500;600&display=swap");
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#f5f5f5;font-family:"Karla",sans-serif;}
+  .stage{width:1920px;height:1080px;padding:70px 90px;position:relative;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:34px;
+    opacity:0; transform:translateY(-14px);}
+  .h{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:44px;color:#18181b;}
+  .live{display:flex;align-items:center;gap:10px;background:#ecfdf5;border:1px solid #a7f3d0;
+    color:#047857;border-radius:999px;padding:10px 20px;font-weight:600;font-size:22px;}
+  .dot{width:12px;height:12px;border-radius:50%;background:#10b981;}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-bottom:44px;}
+  .card{background:#fff;border-radius:20px;padding:28px 30px;display:flex;align-items:center;gap:22px;
+    box-shadow:0 2px 14px rgba(15,37,68,0.06);border-left:6px solid var(--c);
+    opacity:0; transform:translateY(22px) scale(0.97);}
+  .icon{width:64px;height:64px;border-radius:16px;background:var(--bg);color:var(--c);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .num{font-size:46px;font-weight:700;color:#111827;font-family:"Instrument Sans",sans-serif;}
+  .lbl{font-size:22px;color:#6b7280;font-weight:500;margin-top:2px;}
+  .tabs{display:flex;gap:44px;border-bottom:2px solid #e5e7eb;padding-bottom:0;margin-bottom:36px;
+    opacity:0; transform:translateY(14px);}
+  .tab{font-size:24px;font-weight:600;color:#9ca3af;padding-bottom:16px;border-bottom:4px solid transparent;position:relative;}
+  .tab .n{font-size:18px;margin-left:6px;color:#c1c7d0;}
+  .tab.active{color:#3686c0;border-bottom-color:#3686c0;}
+  .tab.active .n{color:#3686c0;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .site{background:#fff;border-radius:18px;padding:26px;box-shadow:0 2px 14px rgba(15,37,68,0.06);
+    opacity:0; transform:translateY(26px) scale(0.96);}
+  .site .name{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:26px;color:#18181b;margin-bottom:6px;}
+  .site .sub{font-size:19px;color:#8a8f98;margin-bottom:16px;}
+  .chip{display:inline-block;padding:7px 16px;border-radius:999px;font-size:17px;font-weight:700;color:#fff;}
+</style>
+</head>
+<body>
+<div id="hb" style="position:fixed;top:0;left:0;width:2px;height:2px;opacity:0.02;background:#000;pointer-events:none;"></div>
+<div class="stage">
+  <div class="topbar" id="topbar">
+    <div class="h">Staff Overview</div>
+    <div class="live"><span class="dot" id="livedot"></span> Live · updated <span id="clock">10:42:07</span></div>
+  </div>
+  <div class="cards" id="cards">
+    <div class="card" style="--c:#3b82f6;--bg:#dbeafe;">
+      <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/></svg></div>
+      <div><div class="num" data-target="24">0</div><div class="lbl">Total Shifts Today</div></div>
+    </div>
+    <div class="card" style="--c:#6366f1;--bg:#e0e7ff;">
+      <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div><div class="num" data-target="16">0</div><div class="lbl">Active Shifts</div></div>
+    </div>
+    <div class="card" style="--c:#22c55e;--bg:#dcfce7;">
+      <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10-3-3"/></svg></div>
+      <div><div class="num" data-target="19">0</div><div class="lbl">Completed</div></div>
+    </div>
+    <div class="card" style="--c:#ef4444;--bg:#fee2e2;">
+      <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div><div class="num" data-target="3">0</div><div class="lbl" style="color:#dc2626;">Attention Needed</div></div>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active">All Sites <span class="n">24</span></div>
+    <div class="tab">Active Sites <span class="n">16</span></div>
+    <div class="tab">Not Checked In <span class="n">3</span></div>
+    <div class="tab">Completed Sites <span class="n">19</span></div>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="site"><div class="name">Riverside Offices</div><div class="sub">3 staff on site</div><span class="chip" style="background:#3b82f6;">Active</span></div>
+    <div class="site"><div class="name">Harbor Mall — Level 2</div><div class="sub">2 staff on site</div><span class="chip" style="background:#22c55e;">Completed</span></div>
+    <div class="site"><div class="name">Sunset Medical Centre</div><div class="sub">1 staff assigned</div><span class="chip" style="background:#f59e0b;">Not Checked In</span></div>
+    <div class="site"><div class="name">Northgate Logistics</div><div class="sub">4 staff on site</div><span class="chip" style="background:#3b82f6;">Active</span></div>
+    <div class="site"><div class="name">Bellview Apartments</div><div class="sub">2 staff on site</div><span class="chip" style="background:#22c55e;">Completed</span></div>
+    <div class="site"><div class="name">Clearwater Studios</div><div class="sub">2 staff on site</div><span class="chip" style="background:#3b82f6;">Active</span></div>
+  </div>
+</div>
+<script>
+  const t0 = performance.now();
+  const cards = document.querySelectorAll(".card");
+  const sites = document.querySelectorAll(".site");
+  const nums = document.querySelectorAll(".num");
+  const tabs = document.querySelectorAll(".tab");
+  function ease(t){ return 1 - Math.pow(1 - t, 3); }
+  let clockBase = new Date(2026,0,1,10,42,7).getTime();
+
+  function frame(){
+    const t = performance.now() - t0;
+    document.getElementById("hb").style.transform = "translateX(" + ((t % 1000) / 100000) + "px)";
+
+    // topbar
+    const topP = Math.min(1, Math.max(0, (t-0)/300));
+    document.getElementById("topbar").style.opacity = ease(topP);
+    document.getElementById("topbar").style.transform = `translateY(${(1-ease(topP))*-14}px)`;
+    document.getElementById("livedot").style.opacity = 0.4 + 0.6*Math.abs(Math.sin(t/300));
+    document.getElementById("clock").textContent = new Date(clockBase + t).toTimeString().slice(0,8);
+
+    // cards stagger 150..750ms
+    cards.forEach((c,i)=>{
+      const start = 150 + i*110, dur = 320;
+      const p = Math.min(1, Math.max(0, (t-start)/dur));
+      const e = ease(p);
+      c.style.opacity = e;
+      c.style.transform = `translateY(${(1-e)*22}px) scale(${0.97+0.03*e})`;
+    });
+    nums.forEach((elm,i)=>{
+      const start = 150 + i*110, dur = 700;
+      const p = Math.min(1, Math.max(0, (t-start)/dur));
+      const target = parseInt(elm.getAttribute("data-target"),10);
+      elm.textContent = Math.round(ease(p)*target);
+    });
+
+    // tabs
+    const tp = Math.min(1, Math.max(0, (t-900)/300));
+    document.getElementById("tabs").style.opacity = ease(tp);
+    document.getElementById("tabs").style.transform = `translateY(${(1-ease(tp))*14}px)`;
+    const tabCycle = Math.floor((t-1200)/700);
+    tabs.forEach((tab,i)=> tab.classList.toggle("active", t>1200 && (tabCycle % tabs.length)===i));
+
+    // site cards stagger
+    sites.forEach((s,i)=>{
+      const start = 1000 + i*110, dur = 340;
+      const p = Math.min(1, Math.max(0, (t-start)/dur));
+      const e = ease(p);
+      s.style.opacity = e;
+      s.style.transform = `translateY(${(1-e)*26}px) scale(${0.96+0.04*e})`;
+    });
+
+    requestAnimationFrame(frame);
+  }
+  document.fonts.ready.then(()=>{ window.__ready = true; requestAnimationFrame(frame); });
+</script>
+</body>
+</html>

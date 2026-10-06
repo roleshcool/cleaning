@@ -1,0 +1,1 @@
+{"nodes": [{"id": "$graphify-root$_multitenant_cleaning_backend_src_main_resources_db_migration_tenant_v3_28_seed_quotation_defaults_sql", "label": "V3_28__seed_quotation_defaults.sql", "file_type": "code", "source_file": "multitenant_cleaning_backend/src/main/resources/db/migration/tenant/V3_28__seed_quotation_defaults.sql", "source_location": null}], "edges": []}

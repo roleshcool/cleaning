@@ -1,0 +1,57 @@
+{
+  "run_id": "multitenant-cleaning-backend_9ce7",
+  "run_name": "multitenant-cleaning-backend_9ce7",
+  "start_time": "2026-09-08T05:07:43.815810+00:00",
+  "end_time": "2026-09-08T05:07:50.271203+00:00",
+  "status": "failed",
+  "auth_mode": "api_key",
+  "targets_info": [
+    {
+      "type": "local_code",
+      "details": {
+        "target_path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend",
+        "workspace_subdir": "multitenant_cleaning_backend"
+      },
+      "original": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend"
+    }
+  ],
+  "llm_usage": {
+    "requests": 0,
+    "input_tokens": 0,
+    "input_tokens_details": [
+      {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      }
+    ],
+    "output_tokens": 0,
+    "output_tokens_details": [
+      {
+        "reasoning_tokens": 0
+      }
+    ],
+    "total_tokens": 0,
+    "request_usage_entries": [],
+    "cost": 0.0,
+    "agents": []
+  },
+  "scan_mode": "deep",
+  "instruction": "Perform a comprehensive security and production-readiness audit of this backend. Inspect authentication, authorization, RBAC, tenant isolation, cross-tenant data access, IDOR/BOLA, JWT and session handling, password security, API endpoints, controllers, services, repositories, database queries, SQL/NoSQL injection, input validation, mass assignment, file uploads, path traversal, SSRF, command injection, deserialization, CORS, CSRF, rate limiting, secrets and environment configuration, logging of sensitive data, error handling, concurrency, dependency vulnerabilities, Docker configuration, Jenkins/CI configuration, and business-logic vulnerabilities. Trace security controls through controller, service, repository and database layers rather than checking files independently. Look specifically for ways one authenticated tenant or user could read, modify, delete or enumerate another tenant's data. For every confirmed finding provide severity, affected file and location, attack scenario, impact, evidence, remediation and verification steps. Distinguish confirmed vulnerabilities from suspected issues and avoid reporting unsupported findings.",
+  "user_instruction": "Perform a comprehensive security and production-readiness audit of this backend. Inspect authentication, authorization, RBAC, tenant isolation, cross-tenant data access, IDOR/BOLA, JWT and session handling, password security, API endpoints, controllers, services, repositories, database queries, SQL/NoSQL injection, input validation, mass assignment, file uploads, path traversal, SSRF, command injection, deserialization, CORS, CSRF, rate limiting, secrets and environment configuration, logging of sensitive data, error handling, concurrency, dependency vulnerabilities, Docker configuration, Jenkins/CI configuration, and business-logic vulnerabilities. Trace security controls through controller, service, repository and database layers rather than checking files independently. Look specifically for ways one authenticated tenant or user could read, modify, delete or enumerate another tenant's data. For every confirmed finding provide severity, affected file and location, attack scenario, impact, evidence, remediation and verification steps. Distinguish confirmed vulnerabilities from suspected issues and avoid reporting unsupported findings.",
+  "non_interactive": false,
+  "local_sources": [
+    {
+      "source_path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend",
+      "workspace_subdir": "multitenant_cleaning_backend",
+      "protect_metadata": true
+    }
+  ],
+  "workspace_files": [],
+  "workspace_mount": null,
+  "diff_scope": {
+    "active": false,
+    "mode": "auto"
+  },
+  "scope_mode": "auto",
+  "diff_base": null
+}

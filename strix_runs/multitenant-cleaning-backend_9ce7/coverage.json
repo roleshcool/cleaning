@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-08 05:07:50 UTC",
+  "run_id": "multitenant-cleaning-backend_9ce7",
+  "run_name": "multitenant-cleaning-backend_9ce7",
+  "scope": {
+    "targets": [
+      {
+        "type": "local_code",
+        "details": {
+          "target_path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend",
+          "workspace_subdir": "multitenant_cleaning_backend"
+        },
+        "original": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/multitenant_cleaning_backend"
+      }
+    ],
+    "scan_mode": "deep",
+    "scope_mode": "auto",
+    "diff_scope": {
+      "active": false,
+      "mode": "auto"
+    },
+    "instruction": "Perform a comprehensive security and production-readiness audit of this backend. Inspect authentication, authorization, RBAC, tenant isolation, cross-tenant data access, IDOR/BOLA, JWT and session handling, password security, API endpoints, controllers, services, repositories, database queries, SQL/NoSQL injection, input validation, mass assignment, file uploads, path traversal, SSRF, command injection, deserialization, CORS, CSRF, rate limiting, secrets and environment configuration, logging of sensitive data, error handling, concurrency, dependency vulnerabilities, Docker configuration, Jenkins/CI configuration, and business-logic vulnerabilities. Trace security controls through controller, service, repository and database layers rather than checking files independently. Look specifically for ways one authenticated tenant or user could read, modify, delete or enumerate another tenant's data. For every confirmed finding provide severity, affected file and location, attack scenario, impact, evidence, remediation and verification steps. Distinguish confirmed vulnerabilities from suspected issues and avoid reporting unsupported findings."
+  },
+  "summary": {
+    "surfaces_reviewed": 0,
+    "outcomes": {},
+    "findings_filed": 0,
+    "gaps": 0
+  },
+  "machine_observed": {
+    "agents": [],
+    "skills_exercised": [],
+    "findings_filed": 0,
+    "source": "runtime"
+  },
+  "completeness": {
+    "complete": false,
+    "scan_status": "failed",
+    "exit_reason": null,
+    "caveats": [
+      "The scan ended with status 'failed' rather than completing, so coverage reflects only the work finished before it stopped."
+    ]
+  },
+  "entries": [],
+  "gaps": []
+}

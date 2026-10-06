@@ -1,0 +1,82 @@
+2026-09-08 15:05:06.714 INFO    cleaning_413e - strix.core.runner: Starting Strix scan cleaning_413e (image=ghcr.io/usestrix/strix-sandbox:1.3.0, max_turns=500, interactive=True, run_dir=/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e)
+2026-09-08 15:05:06.717 INFO    cleaning_413e - strix.core.runner: LLM model resolved: ollama/qwen2.5-coder:7b
+2026-09-08 15:05:06.722 INFO    cleaning_413e - strix.core.runner: Bringing up sandbox session for scan cleaning_413e
+2026-09-08 15:05:06.723 DEBUG   cleaning_413e - strix.runtime.backends: Selected sandbox backend: docker
+2026-09-08 15:05:06.729 INFO    cleaning_413e - strix.runtime.session_manager: Creating sandbox session for scan cleaning_413e (backend=docker, image=ghcr.io/usestrix/strix-sandbox:1.3.0)
+2026-09-08 15:05:07.472 DEBUG   cleaning_413e - strix.runtime.docker_client: Creating sandbox container: image=ghcr.io/usestrix/strix-sandbox:1.3.0 caps=['NET_ADMIN', 'NET_RAW'] exposed_ports=[48080]
+2026-09-08 15:05:08.196 INFO    cleaning_413e - strix.runtime.docker_client: Sandbox container created: id=d8543f7a22e1 image=ghcr.io/usestrix/strix-sandbox:1.3.0
+2026-09-08 15:05:11.660 DEBUG   cleaning_413e - strix.runtime.session_manager: Caido host endpoint resolved: http://127.0.0.1:63825
+2026-09-08 15:05:11.662 INFO    cleaning_413e - strix.runtime.session_manager: Sandbox session for scan cleaning_413e ready and cached
+2026-09-08 15:05:11.662 INFO    cleaning_413e - strix.core.runner: Sandbox ready for scan cleaning_413e
+2026-09-08 15:05:11.666 DEBUG   cleaning_413e - strix.skills: Loaded skill: scan_modes/quick -> quick
+2026-09-08 15:05:11.667 DEBUG   cleaning_413e - strix.skills: Loaded skill: tooling/agent_browser -> agent_browser
+2026-09-08 15:05:11.669 DEBUG   cleaning_413e - strix.skills: Loaded skill: tooling/python -> python
+2026-09-08 15:05:11.670 DEBUG   cleaning_413e - strix.skills: Loaded skill: analysis/counterevidence -> counterevidence
+2026-09-08 15:05:11.671 DEBUG   cleaning_413e - strix.skills: Loaded skill: analysis/severity_calibration -> severity_calibration
+2026-09-08 15:05:11.672 DEBUG   cleaning_413e - strix.skills: Loaded skill: coordination/root_agent -> root_agent
+2026-09-08 15:05:11.673 DEBUG   cleaning_413e - strix.skills: Loaded skill: coordination/source_aware_whitebox -> source_aware_whitebox
+2026-09-08 15:05:11.674 DEBUG   cleaning_413e - strix.skills: Loaded skill: custom/source_aware_sast -> source_aware_sast
+2026-09-08 15:05:11.676 DEBUG   cleaning_413e - strix.skills: Loaded skill: analysis/source_aware_discovery -> source_aware_discovery
+2026-09-08 15:05:11.678 DEBUG   cleaning_413e - strix.skills: Loaded skill: analysis/fix_verification -> fix_verification
+2026-09-08 15:05:11.679 DEBUG   cleaning_413e - strix.skills: load_skills: 10 skill(s) resolved
+2026-09-08 15:05:11.696 DEBUG   cleaning_413e - strix.agents.prompt: render_system_prompt: scan_mode=quick root=True whitebox=True skills=10 prompt_len=129515
+2026-09-08 15:05:11.697 INFO    cleaning_413e - strix.agents.factory: Built root agent 'Root Agent' (skills=0, tools=42, scan_mode=quick, whitebox=True)
+2026-09-08 15:05:11.698 INFO    cleaning_413e - strix.core.agents: agent.register 2c2b43dc (Root Agent) parent=-
+2026-09-08 15:05:11.833 INFO    cleaning_413e - strix.runtime.caido_bootstrap: Bootstrapping Caido client (host=http://127.0.0.1:63825, container=http://127.0.0.1:48080)
+2026-09-08 15:05:12.079 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating trace
+2026-09-08 15:05:12.081 DEBUG   cleaning_413e - openai.agents: Setting current trace: no-op
+2026-09-08 15:05:12.082 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:12.142 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:12.143 DEBUG   cleaning_413e - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-09-08 15:05:12.143 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:12.146 DEBUG   cleaning_413e - openai.agents: No conversation_id available for request
+2026-09-08 15:05:12.147 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:12.149 DEBUG   cleaning_413e - openai.agents: Calling LLM
+2026-09-08 15:05:12.614 INFO    cleaning_413e - strix.runtime.caido_bootstrap: Caido project selected: 28139fc2-0307-4184-97b3-696058ceaa1a
+2026-09-08 15:05:24.790 DEBUG   cleaning_413e - strix.report.usage: LiteLLM cost estimate unavailable for model ollama/qwen2.5-coder:7b
+2026-09-08 15:05:24.808 INFO    cleaning_413e - strix.report.coverage: Saved coverage record to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/coverage.json (0 surface(s), 1 gap(s))
+2026-09-08 15:05:24.818 INFO    cleaning_413e - strix.report.sarif: Wrote SARIF 2.1.0 report: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/findings.sarif (0 results)
+2026-09-08 15:05:24.826 INFO    cleaning_413e - strix.report.state: Essential scan data saved to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e
+2026-09-08 15:05:24.828 DEBUG   cleaning_413e - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-09-08 15:05:24.830 DEBUG   cleaning_413e - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-09-08 15:05:24.902 DEBUG   cleaning_413e - openai.agents: Resetting current trace
+2026-09-08 15:05:24.914 WARNING cleaning_413e - strix.core.execution: agent 2c2b43dc ended a turn without a lifecycle tool call (interactive=True); forcing tool continuation (1/3): {   "name": "view_image",   "arguments": {     "path": "/mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/image.png"   } }
+2026-09-08 15:05:25.044 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating trace
+2026-09-08 15:05:25.046 DEBUG   cleaning_413e - openai.agents: Setting current trace: no-op
+2026-09-08 15:05:25.047 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:25.128 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:25.129 DEBUG   cleaning_413e - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-09-08 15:05:25.130 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:25.133 DEBUG   cleaning_413e - openai.agents: No conversation_id available for request
+2026-09-08 15:05:25.134 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:25.137 DEBUG   cleaning_413e - openai.agents: Calling LLM
+2026-09-08 15:05:38.381 DEBUG   cleaning_413e - strix.report.usage: LiteLLM cost estimate unavailable for model ollama/qwen2.5-coder:7b
+2026-09-08 15:05:38.408 INFO    cleaning_413e - strix.report.coverage: Saved coverage record to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/coverage.json (0 surface(s), 1 gap(s))
+2026-09-08 15:05:38.417 INFO    cleaning_413e - strix.report.sarif: Wrote SARIF 2.1.0 report: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/findings.sarif (0 results)
+2026-09-08 15:05:38.424 INFO    cleaning_413e - strix.report.state: Essential scan data saved to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e
+2026-09-08 15:05:38.426 DEBUG   cleaning_413e - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-09-08 15:05:38.429 DEBUG   cleaning_413e - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-09-08 15:05:38.482 DEBUG   cleaning_413e - openai.agents: Resetting current trace
+2026-09-08 15:05:38.507 WARNING cleaning_413e - strix.core.execution: agent 2c2b43dc ended a turn without a lifecycle tool call (interactive=True); forcing tool continuation (2/3): {"name": "respond_to_user", "arguments": {}}
+2026-09-08 15:05:38.715 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating trace
+2026-09-08 15:05:38.717 DEBUG   cleaning_413e - openai.agents: Setting current trace: no-op
+2026-09-08 15:05:38.718 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:38.833 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:38.835 DEBUG   cleaning_413e - openai.agents: Starting turn 1, current_agent=Root Agent
+2026-09-08 15:05:38.836 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:38.837 DEBUG   cleaning_413e - openai.agents: No conversation_id available for request
+2026-09-08 15:05:38.839 DEBUG   cleaning_413e - openai.agents: Tracing is disabled. Not creating span
+2026-09-08 15:05:38.841 DEBUG   cleaning_413e - openai.agents: Calling LLM
+2026-09-08 15:05:43.632 DEBUG   cleaning_413e - strix.report.usage: LiteLLM cost estimate unavailable for model ollama/qwen2.5-coder:7b
+2026-09-08 15:05:43.651 INFO    cleaning_413e - strix.report.coverage: Saved coverage record to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/coverage.json (0 surface(s), 1 gap(s))
+2026-09-08 15:05:43.659 INFO    cleaning_413e - strix.report.sarif: Wrote SARIF 2.1.0 report: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e/findings.sarif (0 results)
+2026-09-08 15:05:43.666 INFO    cleaning_413e - strix.report.state: Essential scan data saved to: /mnt/c/Users/roles/OneDrive/Desktop/Cord/Cleaning/strix_runs/cleaning_413e
+2026-09-08 15:05:43.669 DEBUG   cleaning_413e - openai.agents: Processing output item type=message class=ResponseOutputMessage
+2026-09-08 15:05:43.670 DEBUG   cleaning_413e - openai.agents: Turn 1 complete, next_step type=NextStepFinalOutput
+2026-09-08 15:05:43.730 DEBUG   cleaning_413e - openai.agents: Resetting current trace
+2026-09-08 15:05:43.741 WARNING cleaning_413e - strix.core.execution: agent 2c2b43dc ended a turn without a lifecycle tool call (interactive=True); forcing tool continuation (3/3): ```json {"name": "finish_scan", "arguments": {}} ```
+2026-09-08 15:05:43.742 WARNING cleaning_413e - strix.core.execution: agent 2c2b43dc exhausted tool-call recovery attempts; parking until a message arrives
+2026-09-08 15:05:43.743 INFO    cleaning_413e - strix.core.agents: agent.status 2c2b43dc=waiting
+2026-09-08 15:07:00.866 INFO    cleaning_413e - strix.core.runner: Tearing down sandbox session for scan cleaning_413e
+2026-09-08 15:07:02.349 INFO    cleaning_413e - strix.runtime.session_manager: Cleaned up sandbox session for scan cleaning_413e
+2026-09-08 15:07:02.357 INFO    cleaning_413e - strix.core.runner: Strix scan cleaning_413e done

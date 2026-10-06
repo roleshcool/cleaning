@@ -1,0 +1,13 @@
+
+> super-admin@0.0.0 dev
+> vite --host
+
+
+  [32m[1mVITE[22m v7.3.6[39m  [2mready in [0m[1m6408[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m98[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://100.83.156.14:[1m98[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.179:[1m98[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.21.64.1:[1m98[22m/[39m
+[32m
+[TypeScript] Found 0 errors. Watching for file changes.[39m

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600;700&family=Karla:wght@400;500;600&display=swap");
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#f5f5f5;font-family:"Karla",sans-serif;}
+  .stage{width:1920px;height:1080px;padding:90px;display:flex;flex-direction:column;gap:40px;}
+  .head{opacity:0;transform:translateY(-12px);}
+  .head h1{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:48px;color:#18181b;margin:0 0 12px 0;}
+  .head p{font-size:26px;color:#4b5563;max-width:1200px;line-height:1.5;margin:0;}
+  .row{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:stretch;}
+  .statcard{background:#fff;border-radius:22px;padding:36px;box-shadow:0 4px 20px rgba(15,37,68,0.06);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+    opacity:0; transform:translateY(24px) scale(0.96);}
+  .gauge{position:relative;width:190px;height:190px;}
+  .gauge svg{transform:rotate(-90deg);}
+  .gauge .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:44px;color:#111827;}
+  .gauge .lbl{margin-top:8px;font-size:20px;color:#6b7280;text-align:center;}
+  .photostat{display:flex;align-items:center;gap:16px;background:#f0fdfa;border-radius:16px;padding:16px 22px;}
+  .photostat .n{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:32px;color:#0f766e;}
+  .photostat .l{font-size:18px;color:#0f766e;opacity:0.85;}
+  .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pcard{background:#fff;border-radius:20px;padding:22px;box-shadow:0 4px 20px rgba(15,37,68,0.06);
+    opacity:0; transform:translateY(26px) scale(0.96);}
+  .pcard .name{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:24px;color:#18181b;margin-bottom:4px;}
+  .pcard .sub{font-size:18px;color:#9ca3af;margin-bottom:14px;}
+  .ba{display:flex;align-items:center;gap:10px;}
+  .swatch{flex:1;height:96px;border-radius:12px;}
+  .before{background:linear-gradient(135deg,#9a8a6b,#c9b998);}
+  .after{background:linear-gradient(135deg,#bfe3ff,#eef8ff);}
+  .arrow{color:#3686c0;font-size:26px;font-weight:700;}
+</style>
+</head>
+<body>
+<div id="hb" style="position:fixed;top:0;left:0;width:2px;height:2px;opacity:0.02;background:#000;pointer-events:none;"></div>
+<div class="stage">
+  <div class="head" id="head">
+    <h1>The client portal</h1>
+    <p>Your sites, the cleans we've completed with photo proof, inspection scores and your invoices — all in one place.</p>
+  </div>
+  <div class="row">
+    <div class="statcard" id="gaugecard">
+      <div class="gauge">
+        <svg width="190" height="190" viewBox="0 0 190 190">
+          <circle cx="95" cy="95" r="80" fill="none" stroke="#e5e7eb" stroke-width="16"/>
+          <circle id="gaugearc" cx="95" cy="95" r="80" fill="none" stroke="#3686c0" stroke-width="16"
+            stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+        </svg>
+        <div class="pct" id="pct">0%</div>
+      </div>
+      <div class="lbl">Latest inspection score</div>
+      <div class="photostat">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg>
+        <div><div class="n" id="photocount">0</div><div class="l">Photos on file</div></div>
+      </div>
+    </div>
+    <div class="photos" id="photos">
+      <div class="pcard"><div class="name">Riverside Offices</div><div class="sub">Completed Tue, 3 photos</div>
+        <div class="ba"><div class="swatch before"></div><div class="arrow">→</div><div class="swatch after"></div></div></div>
+      <div class="pcard"><div class="name">Harbor Mall — Level 2</div><div class="sub">Completed Wed, 4 photos</div>
+        <div class="ba"><div class="swatch before"></div><div class="arrow">→</div><div class="swatch after"></div></div></div>
+      <div class="pcard"><div class="name">Northgate Logistics</div><div class="sub">Completed Thu, 2 photos</div>
+        <div class="ba"><div class="swatch before"></div><div class="arrow">→</div><div class="swatch after"></div></div></div>
+    </div>
+  </div>
+</div>
+<script>
+  const t0 = performance.now();
+  function ease(t){ return 1 - Math.pow(1 - t, 3); }
+  const circumference = 502.4;
+  const targetPct = 96;
+  const targetPhotos = 128;
+  function frame(){
+    const t = performance.now() - t0;
+    document.getElementById("hb").style.transform = "translateX(" + ((t % 1000) / 100000) + "px)";
+
+    const hp = Math.min(1, Math.max(0,(t-0)/300));
+    document.getElementById("head").style.opacity = ease(hp);
+    document.getElementById("head").style.transform = `translateY(${(1-ease(hp))*-12}px)`;
+
+    const gp = Math.min(1, Math.max(0,(t-300)/380));
+    const ge = ease(gp);
+    const card = document.getElementById("gaugecard");
+    card.style.opacity = ge; card.style.transform = `translateY(${(1-ge)*24}px) scale(${0.96+0.04*ge})`;
+
+    const arcP = Math.min(1, Math.max(0,(t-500)/1100));
+    const arcE = ease(arcP);
+    document.getElementById("gaugearc").setAttribute("stroke-dashoffset", circumference*(1-arcE*targetPct/100));
+    document.getElementById("pct").textContent = Math.round(arcE*targetPct)+"%";
+    document.getElementById("photocount").textContent = Math.round(arcE*targetPhotos);
+
+    const photos = document.querySelectorAll(".pcard");
+    photos.forEach((p,i)=>{
+      const start = 700+i*160, dur=360;
+      const pp = Math.min(1, Math.max(0,(t-start)/dur));
+      const pe = ease(pp);
+      p.style.opacity = pe; p.style.transform = `translateY(${(1-pe)*26}px) scale(${0.96+0.04*pe})`;
+    });
+
+    requestAnimationFrame(frame);
+  }
+  document.fonts.ready.then(()=>{ window.__ready = true; requestAnimationFrame(frame); });
+</script>
+</body>
+</html>

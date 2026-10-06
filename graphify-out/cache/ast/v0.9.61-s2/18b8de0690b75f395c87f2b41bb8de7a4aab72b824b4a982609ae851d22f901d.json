@@ -1,0 +1,1 @@
+{"nodes": [{"id": "$graphify-root$_multitenant_cleaning_backend_src_main_resources_db_migration_tenant_v3_36_backfill_crm_permissions_sql", "label": "V3_36__backfill_crm_permissions.sql", "file_type": "code", "source_file": "multitenant_cleaning_backend/src/main/resources/db/migration/tenant/V3_36__backfill_crm_permissions.sql", "source_location": null}], "edges": []}

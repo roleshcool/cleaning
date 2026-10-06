@@ -1,0 +1,82 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cleaning-backend",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": [
+        "scripts/run-local.sh"
+      ],
+      "port": 9898,
+      "autoPort": false,
+      "cwd": "C:\\Users\\roles\\OneDrive\\Desktop\\Cord\\Cleaning\\multitenant_cleaning_backend"
+    },
+    {
+      "name": "cleaning-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "cleaning_frontend",
+        "run",
+        "dev"
+      ],
+      "port": 98,
+      "autoPort": false
+    },
+    {
+      "name": "cleaning-frontend-2",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "cleaning_frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "99"
+      ],
+      "port": 99,
+      "autoPort": false
+    },
+    {
+      "name": "cleaning-frontend-3",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "cleaning_frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "100"
+      ],
+      "port": 100,
+      "autoPort": false
+    },
+    {
+      "name": "cleaning-frontend-4",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "cleaning_frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "8099"
+      ],
+      "port": 8099,
+      "autoPort": false
+    },
+    {
+      "name": "cleaning-frontend-localapi",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": [
+        "-c",
+        "VITE_API_BASE_URL=http://localhost:9898 npm --prefix cleaning_frontend run dev -- --port 99 --strictPort"
+      ],
+      "port": 99,
+      "autoPort": false
+    }
+  ]
+}
